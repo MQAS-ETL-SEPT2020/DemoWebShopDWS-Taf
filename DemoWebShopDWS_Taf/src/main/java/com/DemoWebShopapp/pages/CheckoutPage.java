@@ -2,6 +2,7 @@ package com.DemoWebShopapp.pages;
 
 import org.automation.base.BasePage;
 import org.automation.elements.Button;
+import org.automation.elements.CheckBox;
 import org.automation.elements.DropDown;
 import org.automation.elements.Element;
 import org.automation.elements.RadioButton;
@@ -30,22 +31,25 @@ public class CheckoutPage extends BasePage{
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<Shipping Address Field>>>>>>>>>>>>>>>>>>>>>>>>
 
-	By ShippingAddressField = By.xpath("(//div[@class='step-title'])[2]");
-	By ShippingAddress = By.id("shipping-address-select");
-	By NewShippingAddress = By.xpath("(//option[text()='New Address'])[2]");
-	By CountryIdInShipping = By.id("ShippingNewAddress_CountryId");
-	By CountryNameInShipping = By.xpath("(//option[text()='India'])[2]");
-	By CityInShipping = By.id("ShippingNewAddress_City");
-	By Address1InShipping = By.id("ShippingNewAddress_Address1");
-	By ZipPostalCodeInShipping = By.id("ShippingNewAddress_ZipPostalCode");
-	By PhoneNumberInShipping = By.xpath("//input[@name='ShippingNewAddress.PhoneNumber']");
-	By ContinueInShipping = By.xpath("(//input[@title='Continue'])[2]");
+	public final Element ShippingAddressFeild=new Element("Shipping address feild",By.xpath("(//div[@class='step-title'])[2]"));
+	public final Element newShippingAddressFeild=new Element("Shipping Address",By.id("shipping-address-select"));
+//	public final  DropDown NewShippingAddress=new DropDown("New ShippingAddress",By.xpath("(//option[text()='New Address'])[2]"));
+//    public final DropDown CountryIdinShipping=new DropDown("Country Dropdown",By.id("ShippingNewAddress_CountryId"));
+//	public final TextBox CityTextFeildinShipping=new TextBox("City textfeild in shipping ",By.id("ShippingNewAddress_City"));
+//	public final TextBox Address1inShipping=new TextBox("Address1 in Shipping",By.id("ShippingNewAddress_Address1"));
+//    public final TextBox ZiporPostalcodeinShipping=new TextBox("Zip/PostalCode",By.id("ShippingNewAddress_ZipPostalCode"));
+//    public final TextBox PhonenumberinShipping=new TextBox("Phonenumber in Shipping",By.xpath("//input[@name='ShippingNewAddress.PhoneNumber']"));
+    public final Button ContinueinShipping=new Button("Continue Button in Shipping",By.xpath("(//input[@title='Continue'])[2]"));
+	public final CheckBox InStorePickup=new CheckBox("InstorePickup Checkbox",By.id("PickUpInStore"));
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<shipping Method>>>>>>>>>>>>>>>>>>>>>>>>>
 
-	By shippingMethod = By.xpath("(//div[@class='step-title'])[3]");
-	By ground = By.xpath("//label[@for='shippingoption_0']");
-	By shippingMethodContinue = By.xpath("//input[@onclick='ShippingMethod.save()']");
+//    public final Element ShippingMethod=new Element("Shipping Method Title",By.xpath("(//div[@class='step-title'])[3]"));
+//	public final RadioButton Ground=new RadioButton("Ground RadioButton",By.xpath("//label[@for='shippingoption_0']"));
+//	public final RadioButton NextDaySAir=new RadioButton("NextDaysAir RadioButton",By.id("shippingoption_1")) ;
+//	public final RadioButton SecondDayAir=new RadioButton("Second Day Air RadioButton",By.id("shippingoption_2"));
+//	public final Button ContinueinShippingMethod=new Button("Continue Button in Shipping Method",By.xpath("//input[@onclick='ShippingMethod.save()']"));
+//	
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Method Field>>>>>>>>>>>>>>>>>>>>>>>>>>
 

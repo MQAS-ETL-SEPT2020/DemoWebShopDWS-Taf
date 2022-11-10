@@ -4,7 +4,6 @@ import org.automation.base.BasePage;
 import org.automation.elements.Button;
 import org.automation.elements.DropDown;
 import org.automation.elements.Element;
-import org.automation.elements.HyperLink;
 import org.automation.elements.RadioButton;
 import org.automation.elements.TextBox;
 import org.openqa.selenium.By;
@@ -15,7 +14,7 @@ public class CheckoutPage extends BasePage{
 
 	public final Element CheckoutPage = new Element("CheckOut Page",By.xpath("//h1[text()='Checkout']"));
 	public final Element BillingAddressField = new Element("BillingAddressField",By.xpath("//h2[text()='Billing address']"));
-	public final DropDown BillingAddress =new DropDown("BillingAddress",By.xpath("//select[@id='billing-address-select']"));
+	public final DropDown BillingAddressDropDown =new DropDown("BillingAddress",By.xpath("//select[@id='billing-address-select']"));
 	public final Element NewAddress =  new Element("New Address",By.xpath("//option[text()='New Address']"));
 	public final TextBox FirstName = new TextBox("FirstName TextField",By.id("BillingNewAddress_FirstName"));
 	public final TextBox LastName = new TextBox("LastName TextField",By.id("BillingNewAddress_LastName"));

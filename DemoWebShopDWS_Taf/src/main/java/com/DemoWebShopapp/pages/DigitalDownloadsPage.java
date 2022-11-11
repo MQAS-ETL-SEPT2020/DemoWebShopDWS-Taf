@@ -22,7 +22,7 @@ public class DigitalDownloadsPage extends BasePage {
 	public final DropDown viewAs = new DropDown("ViewAs DropDown", By.id("products-viewmode"));
 	public final DropDown grid_viewAs = new DropDown("Grid_viewAs DropDown", By.xpath("//option[text()='Grid']"));
 
-	public final HyperLink thirdAlbum = new HyperLink("ThirdAlbum", By.xpath("(//a[text()='3rd Album'])[2]"));
+	public final HyperLink thirdAlbum = new HyperLink("ThirdAlbum", By.xpath("//h2[@class='product-title']//a[text()='3rd Album']"));
 
 	public final Element thirdAlbumPage = new Element("ThirdAlbumPage", By.xpath("//div[@class='product-name']"));
 	public final Element price = new Element("Price", By.xpath("//div[@class='product-price']"));

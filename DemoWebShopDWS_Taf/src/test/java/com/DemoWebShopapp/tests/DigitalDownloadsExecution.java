@@ -1,7 +1,6 @@
 package com.DemoWebShopapp.tests;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
@@ -65,17 +64,17 @@ public class DigitalDownloadsExecution extends BaseTest {
 		// Billing Address
 		checkout.BillingAddressDropDown.click(CheckoutPage.class);
 		checkout.BillingAddressDropDown.selectByVisibleText(data.get("Dropdown Visible Text"));
-		assertEquals(checkout.BillingAddressDropDown.getSelectedOption(), data.get("Assertion4"),
+		assertEquals(checkout.BillingAddressDropDown.getSelectedOption(), data.get("Assertion1"),
 				"Incorrect option selected from dropdown");
 
 		checkout.FirstName.enterText(data.get("FirstName"));
-		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion1"), "Incorrect First Name");
+		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion2"), "Incorrect First Name");
 
 		checkout.LastName.enterText(data.get("LastName"));
-		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion2"), "Incorrect First Name");
+		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion3"), "Incorrect First Name");
 
 		checkout.Email.enterText(data.get("Email"));
-		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion3"), "Incorrect Email");
+		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion4"), "Incorrect Email");
 
 		checkout.CountryIdInBilling.click(CheckoutPage.class);
 		checkout.CountryIdInBilling.selectByVisibleText(data.get("Country Dropdown Text"));

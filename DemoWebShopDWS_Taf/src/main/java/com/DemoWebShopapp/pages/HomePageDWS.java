@@ -20,7 +20,7 @@ public class HomePageDWS extends BasePage {
 			By.xpath("(//a[contains(text(),'Apparel & Shoes')])[1]"));
 	public final Button digitalDownloads = new Button("Digital Downloads",
 			By.xpath("(//a[contains(text(),'Digital downloads')])[1]"));
-	public final Button jewellery = new Button("Jewellery", By.xpath("((//a[contains(text(),'Jewelry')])[1]"));
+	public final Button jewellery = new Button("Jewellery", By.xpath("(//a[contains(text(),'Jewelry')])[1]"));
 	public final Button giftCards = new Button("Gift Cards", By.xpath("(//a[contains(text(),'Gift Cards')])[1]"));
 
 }

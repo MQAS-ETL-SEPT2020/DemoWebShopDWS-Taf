@@ -2,25 +2,18 @@ package com.DemoWebShopapp.tests;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.Map;
-
-import javax.xml.crypto.Data;
-
 import org.automation.base.BaseTest;
 import org.automation.logger.Log;
-import org.automation.utilities.Configuration;
 import org.testng.annotations.Test;
-
 import com.DemoWebShopapp.pages.CheckoutPage;
 import com.DemoWebShopapp.pages.GiftcardsPage;
 import com.DemoWebShopapp.pages.HomePageDWS;
 import com.DemoWebShopapp.pages.LoginPageDWS;
 
-import junit.framework.Assert;
 
 public class GiftcardsExceution extends BaseTest {
 
@@ -47,13 +40,11 @@ public class GiftcardsExceution extends BaseTest {
 
 		login.email.enterText(data.get("Username"));
 		Log.info("Entering the Email into the Email Textfeild");
-		assertEquals(login.email.getAttributeValue("value"), data.get("Assertion1"),
-				"Email is not entered in Email Textfeild");
+		assertEquals(login.email.getAttributeValue("value"), data.get("Assertion1"),"Email is not entered in Email Textfeild");
 
 		login.password.enterText(data.get("Password"));
 		Log.info("Entering the password into the password Textfeild");
-		assertEquals(login.password.getAttributeValue("value"), data.get("Assertion2"),
-				"Password is not entered into the Password Textfeild");
+		assertEquals(login.password.getAttributeValue("value"), data.get("Assertion2"),"Password is not entered into the Password Textfeild");
 
 		login.loginButton.click(LoginPageDWS.class);
 		HomePageDWS homepage = new HomePageDWS();
@@ -151,13 +142,11 @@ public class GiftcardsExceution extends BaseTest {
 
 		checkout.ZipPostalCodeInBilling.enterText(data.get("Zip/Postal Code"));
 		Log.info("Entering the data into the Zip/Postalcode Textfeild");
-		assertEquals(checkout.ZipPostalCodeInBilling.getAttributeValue("value"), data.get("Assertion10"),
-				"Zip/PostalCodeinBilling is not entered into the Zip/PostalCodeinBilling Textfeild");
+		assertEquals(checkout.ZipPostalCodeInBilling.getAttributeValue("value"), data.get("Assertion10"),"Zip/PostalCodeinBilling is not entered into the Zip/PostalCodeinBilling Textfeild");
 
 		checkout.PhoneNumberInBilling.enterText(data.get("Phone Number"));
 		Log.info("Entering the data into the Phone Number Textfeild");
-		assertEquals(checkout.PhoneNumberInBilling.getAttributeValue("value"), data.get("Assertion11"),
-				"Phone Number is not entered into the Phone Number Textfeild");
+		assertEquals(checkout.PhoneNumberInBilling.getAttributeValue("value"), data.get("Assertion11"),"Phone Number is not entered into the Phone Number Textfeild");
 
 		// Clicking Continue Button in Billing Address Page
 		checkout.ContinueInBilling.click(CheckoutPage.class);
@@ -175,14 +164,10 @@ public class GiftcardsExceution extends BaseTest {
 		// Clicking on the Continue Button in Payment Information Button
 		checkout.ContinueInPaymentInformation.click(CheckoutPage.class);
 		Log.info("Clicking on the Continue Button in Payment Information");
-		assertTrue(checkout.PaymentmethodText.isVisible(),
-				"Not Clicking on the Continue Button in Payment Information");
-		assertTrue(checkout.BillingAddressText.isVisible(),
-				"Not Clicking on the Continue Button in Payment Information");
-		assertTrue(checkout.ConfirmOrderField.isVisible(),
-				"Not Clicking on the Continue Button in Payment Information ");
-		assertTrue(checkout.ConfirmInConfirmationOrder.isVisible(),
-				"Not Clicking on the Continue Button in Payment Information");
+		assertTrue(checkout.PaymentmethodText.isVisible(),"Not Clicking on the Continue Button in Payment Information");
+		assertTrue(checkout.BillingAddressText.isVisible(),"Not Clicking on the Continue Button in Payment Information");
+		assertTrue(checkout.ConfirmOrderField.isVisible(),"Not Clicking on the Continue Button in Payment Information ");
+		assertTrue(checkout.ConfirmInConfirmationOrder.isVisible(),"Not Clicking on the Continue Button in Payment Information");
 
 		// Clicking on the Confirm Button
 		checkout.ConfirmInConfirmationOrder.click(CheckoutPage.class);

@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.automation.project.test</groupId>
-	<artifactId>herokuapp-testing</artifactId>
+	<artifactId>DemoWebShopapp-testing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Heroku App Testing</name>
+	<name>DemoWebShop App Testing</name>
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>

@@ -52,7 +52,7 @@ public class ApparelAndShoesPage extends BasePage{
 	
 	
 	public final TextBox handlealert=new TextBox("Handlealert", By.xpath("//div[@class='page-body checkout-data']"));
-	//public final DropDown billingaddress=new DropDown("BillingAddress", By.xpath("//select[@name='billing_address_id']"));
+	
 	
 
 	

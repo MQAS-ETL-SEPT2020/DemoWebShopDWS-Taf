@@ -28,10 +28,10 @@ public class ElectronicsExecution extends BaseTest {
 		// Login Page.
 		LoginPageDWS login = home.login.click(LoginPageDWS.class);
 		login.email.enterText(data.get("Username"));
-		assertEquals(login.email.getAttributeValue("value"), data.get("Assertion1"),
+		assertEquals(login.email.getAttributeValue("value"), data.get("Username_Assertion"),
 				"Email is not entered in Email Textfeild");
 		login.password.enterText(data.get("Password"));
-		assertEquals(login.password.getAttributeValue("value"), data.get("Assertion2"),
+		assertEquals(login.password.getAttributeValue("value"), data.get("Password_Assertion"),
 				"password is not entered into password textfield");
 		login.loginButton.click(LoginPageDWS.class);
 
@@ -64,17 +64,20 @@ public class ElectronicsExecution extends BaseTest {
         
 		//Billing Address.
 		checkout1.BillingAddressDropDown.selectByVisibleText(data.get("Dropdown Visible Text"));
+		assertEquals(checkout.BillingAddressDropDown.getSelectedOption(), data.get("Assertion1"),
+				"Incorrect option selected from dropdown");
+		
 		checkout.FirstName.enterText(data.get("FirstName"));
-		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion3"), "Incorrect First Name");
+		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion2"), "Incorrect First Name");
 
 		checkout.LastName.enterText(data.get("LastName"));
-		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion4"), "Incorrect First Name");
+		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion3"), "Incorrect First Name");
 
 		checkout.Email.enterText(data.get("Email"));
-		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion5"), "Incorrect Email");
+		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion4"), "Incorrect Email");
 
 		checkout.CountryIdInBilling.selectByVisibleText(data.get("Country Dropdown Text"));
-		assertEquals(checkout.CountryIdInBilling.getSelectedOption(), data.get("Assertion10"),
+		assertEquals(checkout.CountryIdInBilling.getSelectedOption(), data.get("Assertion5"),
 				"Incorrect option selected from dropdown");
 
 		checkout1.City.enterText(data.get("City"));

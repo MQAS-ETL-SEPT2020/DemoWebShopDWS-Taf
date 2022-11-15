@@ -17,11 +17,12 @@ import com.DemoWebShopapp.pages.LoginPageDWS;
  * @since 14/11/2022
  *
  */
+
 public class ComputerExecution extends BaseTest {
 
 	@Test(dataProvider = "ExcelDataProvider")
 
-	public void checkout(Map<String, String> data) throws InterruptedException {
+	public void computers(Map<String, String> data) throws InterruptedException {
 
 		// LOGIN PAGE
 		HomePageDWS home = new HomePageDWS();

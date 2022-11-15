@@ -10,6 +10,13 @@ import com.DemoWebShopapp.pages.ComputerPage;
 import com.DemoWebShopapp.pages.HomePageDWS;
 import com.DemoWebShopapp.pages.LoginPageDWS;
 
+/**
+ * 
+ * @author TYS-Preeti s  
+ * @version 1.0.0
+ * @since 14/11/2022
+ *
+ */
 public class ComputerExecution extends BaseTest {
 
 	@Test(dataProvider = "ExcelDataProvider")

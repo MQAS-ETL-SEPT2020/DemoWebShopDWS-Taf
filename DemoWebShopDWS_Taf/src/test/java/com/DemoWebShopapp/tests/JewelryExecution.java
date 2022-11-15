@@ -24,7 +24,7 @@ import com.DemoWebShopapp.pages.LoginPageDWS;
 public class JewelryExecution extends BaseTest {
 
 	@Test(dataProvider = "ExcelDataProvider")
-	public void checkout(Map<String, String> data) throws InterruptedException, AWTException {
+	public void jewel(Map<String, String> data) throws InterruptedException, AWTException {
 
 		// Home Page
 		HomePageDWS home = new HomePageDWS();

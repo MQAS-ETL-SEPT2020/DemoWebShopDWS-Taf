@@ -14,6 +14,14 @@ import com.DemoWebShopapp.pages.DigitalDownloadsPage;
 import com.DemoWebShopapp.pages.HomePageDWS;
 import com.DemoWebShopapp.pages.LoginPageDWS;
 
+/**
+ * @author TYS-Megha D
+ * 
+ * @version 1.0.0
+ * @since 14/11/2022
+ *
+ */
+
 public class DigitalDownloadsExecution extends BaseTest {
 
 	@Test(dataProvider = "ExcelDataProvider")
@@ -99,12 +107,7 @@ public class DigitalDownloadsExecution extends BaseTest {
 		assertTrue(checkout.ContinueInBilling.isEnabled(), "Continue In Billing is  disabled");
 		checkout.ContinueInBilling.click();
 
-		// Shipping Address
-//		assertTrue(checkout.ShippingAddressFeild.isVisible(), "Shipping Address Feild is not displayed");
-//		checkout.InStorePickup.check();
-//		assertTrue(checkout.InStorePickup.isChecked(), "InStorePickup  Checkbox is not checked");
-//		checkout.ContinueinShipping.click();
-
+		
 		// Payment Method
 		assertTrue(checkout.PaymentMethodField.isVisible(), "Payment Method Feild is not displayed");
 		checkout.CheckMoneyOrder.click();

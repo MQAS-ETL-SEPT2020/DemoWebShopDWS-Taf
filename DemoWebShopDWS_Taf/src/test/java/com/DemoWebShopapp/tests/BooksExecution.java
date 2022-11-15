@@ -4,7 +4,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import java.util.Map;
 import org.automation.base.BaseTest;
-import org.automation.utilities.Configuration;
 import org.testng.annotations.Test;
 import com.DemoWebShopapp.pages.BooksPage;
 import com.DemoWebShopapp.pages.CheckoutPage;
@@ -15,19 +14,13 @@ public class BooksExecution extends BaseTest {
 	@Test(dataProvider = "ExcelDataProvider")
 	public void booksPageTest(Map<String, String> data) throws InterruptedException {
 
-//		HomePageDWS home = new HomePageDWS();
-//		LoginPageDWS login = home.login.click(LoginPageDWS.class);
-//		login.email.enterText(Configuration.get("username"));
-//		login.password.enterText(Configuration.get("password"));
-//		login.loginButton.click(LoginPageDWS.class);
-
 		HomePageDWS home = new HomePageDWS();
 		LoginPageDWS login = home.login.click(LoginPageDWS.class);
 		login.email.enterText(data.get("Username"));
-		assertEquals(login.email.getAttributeValue("value"), data.get("Assertion1"),
+		assertEquals(login.email.getAttributeValue("value"), data.get("Username_Assertion"),
 				"Email is not entered into Email textfield");
 		login.password.enterText(data.get("Password"));
-		assertEquals(login.password.getAttributeValue("value"), data.get("Assertion2"),
+		assertEquals(login.password.getAttributeValue("value"), data.get("Password_Assertion"),
 				"password is not entered into password textfield");
 		login = login.loginButton.click(LoginPageDWS.class);
 
@@ -53,25 +46,26 @@ public class BooksExecution extends BaseTest {
 
 		books.checkOut.click();
 
-//		// @Test(dataProvider = "ExcelDataProvider")
-//		// public void checkout(Map<String, String> data) throws InterruptedException {
 		// BILLING ADDRESS
 		CheckoutPage checkout = new CheckoutPage();
 		checkout.BillingAddressDropDown.selectByVisibleText(data.get("Dropdown Visible Text"));
+		assertEquals(checkout.BillingAddressDropDown.getSelectedOption(), data.get("Assertion1"),
+				"Incorrect option selected from dropdown");
+
 		checkout.FirstName.enterText(data.get("FirstName"));
-		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion3"),
+		assertEquals(checkout.FirstName.getAttributeValue("value"), data.get("Assertion2"),
 				"FirstName is not entered into FirstName Text field");
 
 		checkout.LastName.enterText(data.get("LastName"));
-		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion4"),
+		assertEquals(checkout.LastName.getAttributeValue("value"), data.get("Assertion3"),
 				"LastName is not entered into LastName Text field");
 
 		checkout.Email.enterText(data.get("Email"));
-		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion5"),
+		assertEquals(checkout.Email.getAttributeValue("value"), data.get("Assertion4"),
 				"Email is not entered into Email Text field");
 
 		checkout.CountryIdInBilling.selectByVisibleText(data.get("Country Dropdown Text"));
-		assertEquals(checkout.CountryIdInBilling.getSelectedOption(), data.get("Assertion10"),
+		assertEquals(checkout.CountryIdInBilling.getSelectedOption(), data.get("Assertion5"),
 				"Incorrect option selected from dropdown");
 
 		checkout.City.enterText(data.get("City"));

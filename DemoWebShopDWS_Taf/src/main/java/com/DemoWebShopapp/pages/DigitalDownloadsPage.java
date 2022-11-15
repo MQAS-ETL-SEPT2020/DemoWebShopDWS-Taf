@@ -8,6 +8,13 @@ import org.automation.elements.Element;
 import org.automation.elements.HyperLink;
 import org.openqa.selenium.By;
 
+/**
+ *  @author TYS-Megha D
+ * 
+ * @version 1.0.0
+ * @since 14/11/2022
+ *
+ */
 public class DigitalDownloadsPage extends BasePage {
 
 	public final Element digitalDownloadspage = new Element("DigitalDownloadsPage",

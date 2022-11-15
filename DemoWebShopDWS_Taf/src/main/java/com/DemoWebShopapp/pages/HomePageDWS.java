@@ -6,6 +6,14 @@ import org.automation.elements.HyperLink;
 import org.automation.utilities.Configuration;
 import org.openqa.selenium.By;
 
+/**
+ * @author TYS-Megha D
+ * 
+ * @version 1.0.0
+ * @since 14/11/2022
+ *
+ */
+
 public class HomePageDWS extends BasePage {
 	public HomePageDWS() {
 		super.openUrl(Configuration.get("url"));

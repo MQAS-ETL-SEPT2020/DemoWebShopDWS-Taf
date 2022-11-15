@@ -1,6 +1,4 @@
 //package com.DemoWebShopapp.tests;
-
-
 	package com.DemoWebShopapp.tests;
 	import static org.testng.Assert.assertEquals;
 	import static org.testng.Assert.assertTrue;
@@ -31,8 +29,13 @@
 	import com.DemoWebShopapp.pages.JewelryPage;
 	import com.DemoWebShopapp.pages.LoginPageDWS;
 
-	//import com.herokuapp.pages.AddRemoveElementsPage;
-	//import com.herokuapp.pages.HomePage;
+	/**
+	 * 
+	 * @author TYS-Vanishree
+	 * @version 1.0.0
+	 * @since 14/11/2022
+	 *
+	 */
 	public class JewelryExecution extends BaseTest {
 //			@Test
 		// public void Jewelrypagetest() throws InterruptedException, AWTException {
@@ -45,22 +48,24 @@
 //				login.loginButton.click(LoginPageDWS.class);
 		@Test(dataProvider = "ExcelDataProvider")
 		public void checkout(Map<String, String> data) throws InterruptedException, AWTException {
+			
+			// Home Page
 			HomePageDWS home = new HomePageDWS();
+			
+			// login Page
 			LoginPageDWS login = home.login.click(LoginPageDWS.class);
-
-			assertTrue(login.email.isVisible(), "Not  clicking on Login link");
+            assertTrue(login.email.isVisible(), "Not  clicking on Login link");
 			assertTrue(login.password.isVisible(), "Not clicking on Login Link");
 			assertTrue(login.loginButton.isVisible(), "Not clicking on Login Link");
 			login.email.enterText(data.get("Username"));
 			Log.info("Entering  the Email into the Email Textfield");
-			assertEquals(login.email.getAttributeValue("value"), data.get("Assertion1"),
+			assertEquals(login.email.getAttributeValue("value"), data.get("Username_Assertion"),
 					"Email is not entered into the Email");
 			login.password.enterText(data.get("Password"));
 			Log.info("Entering the Email into the Password Textfield");
-			assertEquals(login.password.getAttributeValue("value"), data.get("Assertion2"),
+			assertEquals(login.password.getAttributeValue("value"), data.get("Password_Assertion"),
 					"Password is not entered into the Email");
-
-			login = login.loginButton.click(LoginPageDWS.class);
+            login = login.loginButton.click(LoginPageDWS.class);
 
 			HomePageDWS homepage = new HomePageDWS();
 			assertTrue(homepage.books.isVisible(), "Not clicking on Login Button");
@@ -70,7 +75,8 @@
 			assertTrue(homepage.digitalDownloads.isVisible(), "Not clicking on Login Button");
 			assertTrue(homepage.jewellery.isVisible(), "Not clicking on login button");
 			assertTrue(homepage.giftCards.isVisible(), "Not clicking on Login Button");
-
+             
+			//JewelryPage
 			JewelryPage jewel = home.jewellery.click(JewelryPage.class);
 			assertTrue(jewel.jewelText.isVisible(), "Jewelry Page is not displayed");
 			assertTrue(jewel.sortby.isVisible(), "By default position is not displayed");
@@ -93,51 +99,47 @@
 			jewel.Terms.check();
 			// assertTrue(jewel.termsandcond.isChecked(), "Checkbox is not Checked");
 			jewel.checkout.click();
-
+             
+			//CheckoutPage
 			CheckoutPage checkout1 = new CheckoutPage();
-			// assertTrue(checkout1.CheckoutPage.isVisible(), "Checkoutpage is not
-			// displayed");
+			 assertTrue(checkout1.CheckoutPage.isVisible(), "Checkoutpage is not displayed");
+			 
+			//BillingAddressPage  
 			checkout1.BillingAddressDropDown.selectByVisibleText(data.get("Dropdown Visible Text"));
 			// assertTrue(checkout1.);
+			assertEquals(checkout1.BillingAddressDropDown.getSelectedOption(), data.get("Assertion1"),
+					"Incorrect option selected from dropdown");
+			
 			checkout1.FirstName.enterText(data.get("FirstName"));
 			Log.info("Entering  the FirstName into the FirstName Textfield");
-			assertEquals(checkout1.FirstName.getAttributeValue("value"), data.get("Assertion3"),
+			assertEquals(checkout1.FirstName.getAttributeValue("value"), data.get("Assertion2"),
 					"FirstName is not entered into the FirstName Textfield");
-
 			checkout1.LastName.enterText(data.get("LastName"));
 			Log.info("Entering  the LastName into the LastName Textfield");
-			assertEquals(checkout1.LastName.getAttributeValue("value"), data.get("Assertion4"),
+			assertEquals(checkout1.LastName.getAttributeValue("value"), data.get("Assertion3"),
 					"LastName is not entered into the LastName Textfield");
-
 			checkout1.Email.enterText(data.get("Email"));
 			Log.info("Entering  the Email into the Email Textfield");
-			assertEquals(checkout1.Email.getAttributeValue("value"), data.get("Assertion5"),
+			assertEquals(checkout1.Email.getAttributeValue("value"), data.get("Assertion4"),
 					"Email is not entered into the LastName Textfield");
-
-			// checkout1.CountryIdInBilling.selectByVisibleText(data.get("Country Dropdown
-			// Text"));
 			checkout1.CountryIdInBilling.selectByVisibleText(data.get("Country Dropdown Text"));
-			assertEquals(checkout1.CountryIdInBilling.getSelectedOption(), data.get("Country Dropdown Text"),
+			assertEquals(checkout1.CountryIdInBilling.getSelectedOption(), data.get("Assertion5"),
 					"Incorrect option selected from dropdown");
-
 			checkout1.City.enterText(data.get("City"));
-			assertEquals(checkout1.City.getAttributeValue("value"), data.get("Assertion7"), "Incorrect City");
-
+			assertEquals(checkout1.City.getAttributeValue("value"), data.get("Assertion6"), "Incorrect City");
 			checkout1.Address1InBilling.enterText(data.get("Address1"));
-			assertEquals(checkout1.Address1InBilling.getAttributeValue("value"), data.get("Assertion8"),
+			assertEquals(checkout1.Address1InBilling.getAttributeValue("value"), data.get("Assertion7"),
 					"Incorrect Address1");
-
 			checkout1.ZipPostalCodeInBilling.enterText(data.get("Zip/Postal Code"));
-			assertEquals(checkout1.ZipPostalCodeInBilling.getAttributeValue("value"), data.get("Assertion9"),
+			assertEquals(checkout1.ZipPostalCodeInBilling.getAttributeValue("value"), data.get("Assertion8"),
 					"Incorrect Zip/Postal Code");
-
 			checkout1.PhoneNumberInBilling.enterText(data.get("Phone Number"));
-			assertEquals(checkout1.PhoneNumberInBilling.getAttributeValue("value"), data.get("Assertion10"),
+			assertEquals(checkout1.PhoneNumberInBilling.getAttributeValue("value"), data.get("Assertion9"),
 					"Incorrect Phone Number");
-
 			assertTrue(checkout1.ContinueInBilling.isEnabled(), "Continue In Billing is  disabled");
 			checkout1.ContinueInBilling.click();
-
+            
+			//ShippingAddressPage
 			assertTrue(checkout1.ShippingAddressFeild.isVisible(), "Shipping Address Feild is not displayed");
 			checkout1.InStorePickup.check();
 			assertTrue(checkout1.InStorePickup.isChecked(), "InStorePickup  Checkbox is not checked");

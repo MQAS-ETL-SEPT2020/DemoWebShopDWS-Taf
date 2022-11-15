@@ -21,7 +21,13 @@
 		//import org.openqa.selenium.interactions.Actions;
 		//import org.openqa.selenium.support.ui.Select;
 		//import org.openqa.selenium.support.ui.Wait;
-
+		/**
+		 * 
+		 * @author TYS-Vanishree
+		 * @version 1.0.0
+		 * @since 14/11/2022
+		 *
+		 */
 		public class JewelryPage extends BasePage
 		{
 			public final Element jewelText=new Element("JewelpageText",By.xpath("//h1[text()='Jewelry']"));

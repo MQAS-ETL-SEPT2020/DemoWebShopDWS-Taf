@@ -21,7 +21,7 @@ import com.DemoWebShopapp.pages.LoginPageDWS;
 public class ElectronicsExecution extends BaseTest {
 
 	@Test(dataProvider = "ExcelDataProvider")
-	public void checkout(Map<String, String> data) throws InterruptedException {
+	public void electronics(Map<String, String> data) throws InterruptedException {
 		// Home Page.
 		HomePageDWS home = new HomePageDWS();
 

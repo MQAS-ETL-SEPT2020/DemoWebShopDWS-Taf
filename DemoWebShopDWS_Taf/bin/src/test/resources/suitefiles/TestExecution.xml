@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Heroku App Suite">
+	<groups>
+		<run>
+			<exclude name="Ignore" />
+		</run>
+	</groups>
+	<test name="Heroku App Test">
+		<packages>
+			<package name="com.herokuapp.tests" />
+		</packages>
+	</test>
+</suite>

@@ -26,7 +26,7 @@ import com.DemoWebShopapp.pages.LoginPageDWS;
  */
 public class ApparelAndShoesExecution extends BaseTest {
 	@Test(dataProvider = "ExcelDataProvider")
-	public void checkout(Map<String, String> data) throws InterruptedException {
+	public void apparelandshoes(Map<String, String> data) throws InterruptedException {
 		// Home page
 		HomePageDWS home = new HomePageDWS();
 
